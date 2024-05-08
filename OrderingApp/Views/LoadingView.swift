@@ -23,7 +23,7 @@ struct LoadingView: View {
                     Image(systemName: "mug.fill")
                         .font(.system(size: 80))
                         .foregroundColor(Color("brandColor"))
-                    Text("App Name Here")
+                    Text("Coffee House")
                         .font(Font.custom("Times New Roman", size: 20))
                         .fontWeight(.semibold)
                         .padding(4)

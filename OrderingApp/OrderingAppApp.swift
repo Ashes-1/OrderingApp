@@ -11,7 +11,7 @@ import SwiftUI
 struct OrderingAppApp: App {
     var body: some Scene {
         WindowGroup {
-            AppTabView()
+            LandingView()
         }
     }
 }

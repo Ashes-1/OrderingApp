@@ -23,6 +23,9 @@
 		7DDD9B542BEBD68600FF22FE /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD9B532BEBD68600FF22FE /* AccountViewModel.swift */; };
 		7DDD9B572BEBD81700FF22FE /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD9B562BEBD81700FF22FE /* String+Ext.swift */; };
 		7DDD9B592BEBDB6E00FF22FE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD9B582BEBDB6E00FF22FE /* LoadingView.swift */; };
+		7DDD9B5B2BEBE22400FF22FE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD9B5A2BEBE22400FF22FE /* LoginView.swift */; };
+		7DDD9B5D2BEBE37800FF22FE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD9B5C2BEBE37800FF22FE /* RegisterView.swift */; };
+		7DDD9B5F2BEBEA1E00FF22FE /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD9B5E2BEBEA1E00FF22FE /* LandingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		7DDD9B532BEBD68600FF22FE /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		7DDD9B562BEBD81700FF22FE /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		7DDD9B582BEBDB6E00FF22FE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		7DDD9B5A2BEBE22400FF22FE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		7DDD9B5C2BEBE37800FF22FE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		7DDD9B5E2BEBEA1E00FF22FE /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +114,10 @@
 		7D1038DB2BEB72AD000BE5B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7DDD9B5E2BEBEA1E00FF22FE /* LandingView.swift */,
 				7DDD9B582BEBDB6E00FF22FE /* LoadingView.swift */,
+				7DDD9B5A2BEBE22400FF22FE /* LoginView.swift */,
+				7DDD9B5C2BEBE37800FF22FE /* RegisterView.swift */,
 				7D1038D02BEB5E72000BE5B0 /* HomeView.swift */,
 				7D1038E32BEB8F21000BE5B0 /* ProductListCell.swift */,
 				7DDD9B512BEBC4EA00FF22FE /* ProductDetailView.swift */,
@@ -210,10 +219,13 @@
 				7DDD9B522BEBC4EA00FF22FE /* ProductDetailView.swift in Sources */,
 				7D1038D52BEB5E83000BE5B0 /* OrdersView.swift in Sources */,
 				7D1038E62BEB900B000BE5B0 /* ModelData.swift in Sources */,
+				7DDD9B5F2BEBEA1E00FF22FE /* LandingView.swift in Sources */,
 				7D1038D12BEB5E72000BE5B0 /* HomeView.swift in Sources */,
 				7DDD9B542BEBD68600FF22FE /* AccountViewModel.swift in Sources */,
+				7DDD9B5D2BEBE37800FF22FE /* RegisterView.swift in Sources */,
 				7DDD9B572BEBD81700FF22FE /* String+Ext.swift in Sources */,
 				7D1038C52BEB5DCE000BE5B0 /* AppTabView.swift in Sources */,
+				7DDD9B5B2BEBE22400FF22FE /* LoginView.swift in Sources */,
 				7D1038D32BEB5E7B000BE5B0 /* CartView.swift in Sources */,
 				7D1038E42BEB8F21000BE5B0 /* ProductListCell.swift in Sources */,
 				7D1038C32BEB5DCE000BE5B0 /* OrderingAppApp.swift in Sources */,

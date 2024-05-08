@@ -12,6 +12,7 @@ final class AccountViewModel: ObservableObject {
     @Published var firstName = ""
     @Published var lastName = ""
     @Published var email = ""
+    @Published var password = ""
     @Published var birthDate = Date()
  
     var isValidForm: Bool {
