@@ -1,0 +1,984 @@
+[
+  {
+    "id": "01",
+    "name": "Cappuccino",
+    "category": "Hot",
+    "description": "A shot of espresso with a thick creamy layer of frothed milk.",
+    "size": [
+        {
+        "name": "Small",
+        "price": 2.99
+        },
+        {
+        "name": "Regular",
+        "price": 3.99
+        },
+        {
+        "name": "Large",
+        "price": 4.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Vanilla Cream",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        },
+        {
+        "name": "Chocolate Powder",
+        "price": 0.00
+        }
+    ],
+    "imageName": "cappuccino"
+  },
+  {
+    "id": "02",
+    "name": "Mocha",
+    "category": "Hot",
+    "description": "When coffee and chocolate flavours meet! Espresso combined with our mocha sauce and topped with hot, frothy milk and whipped cream.",
+    "size": [
+        {
+        "name": "Small",
+        "price": 2.99
+        },
+        {
+        "name": "Regular",
+        "price": 3.99
+        },
+        {
+        "name": "Large",
+        "price": 4.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Vanilla Cream",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        },
+        {
+        "name": "Cinnamon Powder",
+        "price": 0.00
+        }
+    ],
+    "imageName": "mocha"
+  },
+  {
+    "id": "03",
+    "name": "Flat White",
+    "category": "Hot",
+    "description": "Expertly steamed milk poured over a double shot of our signature espresso and finished with a thin layer of velvety microfoam.",
+    "size": [
+        {
+        "name": "Small",
+        "price": 2.99
+        },
+        {
+        "name": "Regular",
+        "price": 3.99
+        },
+        {
+        "name": "Large",
+        "price": 4.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Vanilla Cream",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        },
+        {
+        "name": "Cinnamon Powder",
+        "price": 0.00
+        }
+    ],
+    "imageName": "flatwhite"
+  },
+  {
+    "id": "04",
+    "name": "Latte",
+    "category": "Hot",
+    "description": "This classic cafe latte is a shot of bold, tasty espresso with fresh, steamed milk poured over it.",
+    "size": [
+        {
+        "name": "Small",
+        "price": 2.99
+        },
+        {
+        "name": "Regular",
+        "price": 3.99
+        },
+        {
+        "name": "Large",
+        "price": 4.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Vanilla Cream",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        },
+        {
+        "name": "Chocolate Powder",
+        "price": 0.00
+        }
+    ],
+    "imageName": "latte"
+  },
+  {
+    "id": "05",
+    "name": "Caramel Macchiato",
+    "category": "Hot",
+    "description": "Creamy vanilla-flavoured syrup, freshly steamed milk with a topping of velvety-rich foam, an intense hit of our Espresso Roast, a finishing of buttery caramel drizzle.",
+    "size": [
+        {
+        "name": "Small",
+        "price": 2.99
+        },
+        {
+        "name": "Regular",
+        "price": 3.99
+        },
+        {
+        "name": "Large",
+        "price": 4.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Vanilla Cream",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        },
+        {
+        "name": "Cinnamon Powder",
+        "price": 0.00
+        }
+    ],
+    "imageName": "caramelmacchiato"
+  },
+  {
+    "id": "06",
+    "name": "Matcha Latte",
+    "category": "Hot",
+    "description": "A blend of steamed milk and matcha make a smooth and creamy beverage.",
+    "size": [
+        {
+        "name": "Small",
+        "price": 2.99
+        },
+        {
+        "name": "Regular",
+        "price": 3.99
+        },
+        {
+        "name": "Large",
+        "price": 4.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        }
+    ],
+    "imageName": "machalatte"
+  },
+  {
+    "id": "07",
+    "name": "Chai Latte",
+    "category": "Hot",
+    "description": "Sweet and spicy chai combined with your choice of milk and topped with the perfect amount of foam.",
+    "size": [
+        {
+        "name": "Small",
+        "price": 2.99
+        },
+        {
+        "name": "Regular",
+        "price": 3.99
+        },
+        {
+        "name": "Large",
+        "price": 4.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Foam",
+        "price": 0.00
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        }
+    ],
+    "imageName": "chailatte"
+  },
+  {
+    "id": "08",
+    "name": "English Breakfast Tea Latte",
+    "category": "Hot",
+    "description": "Black tea with subtle hints of vanilla blended with expertly steamed milk.",
+    "size": [
+        {
+        "name": "Small",
+        "price": 2.99
+        },
+        {
+        "name": "Regular",
+        "price": 3.99
+        },
+        {
+        "name": "Large",
+        "price": 4.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        }
+    ],
+    "imageName": "englishbreakfasttealatte"
+  },
+  {
+    "id": "09",
+    "name": "Hot Chocolate",
+    "category": "Hot",
+    "description": "Our signature creamy hot chocolate. Add on some whipped cream to make it extra creamy!",
+    "size": [
+        {
+        "name": "Small",
+        "price": 2.99
+        },
+        {
+        "name": "Regular",
+        "price": 3.99
+        },
+        {
+        "name": "Large",
+        "price": 4.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Whipped Cream Vanilla",
+        "price": 0.00
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        },
+        {
+        "name": "Chocolate Powder",
+        "price": 0.50
+        }
+    ],
+    "imageName": "hotchocolate"
+  },
+  {
+    "id": "10",
+    "name": "Iced Cappuccino",
+    "category": "Cold",
+    "description": "An iced take on a coffeehouse classic that's sure to surprise you with its bold flavour!",
+    "size": [
+        {
+        "name": "Regular",
+        "price": 4.99
+        },
+        {
+        "name": "Large",
+        "price": 7.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Whipped Cream Vanilla",
+        "price": 0.00
+        },
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Vanilla Syrup",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        },
+        {
+        "name": "Chocolate Chips",
+        "price": 0.50
+        }
+    ],
+    "imageName": "icedcappuccino"
+  },
+  {
+    "id": "11",
+    "name": "Iced Mocha",
+    "category": "Cold",
+    "description": "Espresso, bittersweet mocha sauce poured over ice and topped with rich, sweetened whipped cream.",
+    "size": [
+        {
+        "name": "Regular",
+        "price": 4.99
+        },
+        {
+        "name": "Large",
+        "price": 7.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Whipped Cream Vanilla",
+        "price": 0.00
+        },
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Vanilla Syrup",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        },
+        {
+        "name": "Chocolate Chips",
+        "price": 0.50
+        }
+    ],
+    "imageName": "icedmocha"
+  },
+  {
+    "id": "12",
+    "name": "Iced Latte",
+    "category": "Cold",
+    "description": "Rich, full-bodied espresso in cold milk poured over ice.",
+    "size": [
+        {
+        "name": "Regular",
+        "price": 4.99
+        },
+        {
+        "name": "Large",
+        "price": 7.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Whipped Cream Vanilla",
+        "price": 0.00
+        },
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Vanilla Syrup",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        },
+        {
+        "name": "Chocolate Chips",
+        "price": 0.50
+        }
+    ],
+    "imageName": "icedlatte"
+  },
+  {
+    "id": "13",
+    "name": "Iced Caramel Macciato",
+    "category": "Cold",
+    "description": "To our bold espresso we add a creamy mix of vanilla syrup and cold milk poured over ice.",
+    "size": [
+        {
+        "name": "Regular",
+        "price": 4.99
+        },
+        {
+        "name": "Large",
+        "price": 7.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Whipped Cream Vanilla",
+        "price": 0.00
+        },
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Vanilla Syrup",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        },
+        {
+        "name": "Chocolate Chips",
+        "price": 0.50
+        }
+    ],
+    "imageName": "icedcaramelmacchiato"
+  },
+  {
+    "id": "14",
+    "name": "Iced Americano",
+    "category": "Cold",
+    "description": "Combined with our signature espresso with water, poured over ice.",
+    "size": [
+        {
+        "name": "Regular",
+        "price": 4.99
+        },
+        {
+        "name": "Large",
+        "price": 7.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "No Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Vanilla Syrup",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        }
+    ],
+    "imageName": "icedamericano"
+  },
+  {
+    "id": "15",
+    "name": "Chocolate Frappuccino",
+    "category": "Cold",
+    "description": "A smooth blend of chocolate sauce, milk and ice topped with whipped cream for a remarkable flavour.",
+    "size": [
+        {
+        "name": "Regular",
+        "price": 4.99
+        },
+        {
+        "name": "Large",
+        "price": 7.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Vanilla Syrup",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        },
+        {
+        "name": "Chocolate Chips",
+        "price": 0.50
+        }
+    ],
+    "imageName": "chocolatefrappuccino"
+  },
+  {
+    "id": "16",
+    "name": "Vanilla Chai Frappuccino",
+    "category": "Cold",
+    "description": "Creamy flavours of vanilla and chai blended with milk and ice, topped with whipped cream, works perfectly to create this tasty classic.",
+    "size": [
+        {
+        "name": "Regular",
+        "price": 4.99
+        },
+        {
+        "name": "Large",
+        "price": 7.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Vanilla Syrup",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        },
+        {
+        "name": "Chocolate Chips",
+        "price": 0.50
+        }
+    ],
+    "imageName": "vanillachaifrappuccino"
+  },
+  {
+    "id": "17",
+    "name": "Matcha Green Tea Frappuccino",
+    "category": "Cold",
+    "description": "Finely-powdered green tea blended with milk and ice and topped with vanilla whipped cream.",
+    "size": [
+        {
+        "name": "Regular",
+        "price": 4.99
+        },
+        {
+        "name": "Large",
+        "price": 7.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Vanilla Syrup",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        },
+        {
+        "name": "Chocolate Chips",
+        "price": 0.50
+        }
+    ],
+    "imageName": "matchagreenteafrappuccino"
+  },
+  {
+    "id": "18",
+    "name": "Strawberry Frappuccino",
+    "category": "Cold",
+    "description": "A sweet drink that is blended with strawberries, cream, milk and ice and topped off with vanilla whipped cream.",
+    "size": [
+        {
+        "name": "Regular",
+        "price": 4.99
+        },
+        {
+        "name": "Large",
+        "price": 7.99
+        }
+    ],
+    "milk": [
+        {
+        "name": "Full Cream Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Skim Milk",
+        "price": 0.00
+        },
+        {
+        "name": "Almond Milk",
+        "price": 0.90
+        },
+        {
+        "name": "Soy Milk",
+        "price": 0.90
+        }
+    ],
+    "addons": [
+        {
+        "name": "Decaf Shot",
+        "price": 0.50
+        },
+        {
+        "name": "Vanilla Syrup",
+        "price": 0.50
+        },
+        {
+        "name": "Sugar Sachet",
+        "price": 0.00
+        },
+        {
+        "name": "Diced Strawberries",
+        "price": 2.00
+        }
+    ],
+    "imageName": "strawberryfrappuccino"
+  }
+]
