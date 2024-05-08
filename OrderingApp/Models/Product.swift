@@ -27,7 +27,3 @@ struct Option: Decodable {
     let name: String
     let price: Double
 }
-
-//struct ProductResponse {
-//    let request: [Product]
-//}
