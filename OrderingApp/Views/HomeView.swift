@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var modelData = ModelData()
+    @State private var showDetail = false
+    @State private var selectProduct: Product? //new
     
     var body: some View {
         NavigationView {
@@ -20,6 +22,10 @@ struct HomeView: View {
                 ) {
                     ForEach(modelData.products.filter { $0.category == "Hot" }) { product in
                         ProductListCell(product: product)
+                            .onTapGesture {
+                                selectProduct = product //new
+                                showDetail = true
+                            }
                     }
                 }
                 Section(header: Text("Cold Drinks")
@@ -29,10 +35,19 @@ struct HomeView: View {
                 ) {
                     ForEach(modelData.products.filter { $0.category == "Cold" }) { product in
                         ProductListCell(product: product)
+                            .onTapGesture {
+                                selectProduct = product //new
+                                showDetail = true
+                            }
                     }
                 }
             }
             .navigationTitle("Drinks")
+            .sheet(isPresented: $showDetail) { //new
+                if let selectProduct = selectProduct {
+                    ProductDetailView(product: selectProduct, isPresented: $showDetail)
+                }
+            }
         }
     }
     

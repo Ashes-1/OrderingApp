@@ -19,6 +19,7 @@
 		7D1038E22BEB7C49000BE5B0 /* coffeedb.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D1038E12BEB7C49000BE5B0 /* coffeedb.json */; };
 		7D1038E42BEB8F21000BE5B0 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1038E32BEB8F21000BE5B0 /* ProductListCell.swift */; };
 		7D1038E62BEB900B000BE5B0 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1038E52BEB900B000BE5B0 /* ModelData.swift */; };
+		7DDD9B522BEBC4EA00FF22FE /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD9B512BEBC4EA00FF22FE /* ProductDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		7D1038E12BEB7C49000BE5B0 /* coffeedb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffeedb.json; sourceTree = "<group>"; };
 		7D1038E32BEB8F21000BE5B0 /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		7D1038E52BEB900B000BE5B0 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		7DDD9B512BEBC4EA00FF22FE /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +101,11 @@
 			isa = PBXGroup;
 			children = (
 				7D1038D02BEB5E72000BE5B0 /* HomeView.swift */,
+				7D1038E32BEB8F21000BE5B0 /* ProductListCell.swift */,
+				7DDD9B512BEBC4EA00FF22FE /* ProductDetailView.swift */,
 				7D1038D22BEB5E7B000BE5B0 /* CartView.swift */,
 				7D1038D42BEB5E83000BE5B0 /* OrdersView.swift */,
 				7D1038D62BEB5E89000BE5B0 /* AccountView.swift */,
-				7D1038E32BEB8F21000BE5B0 /* ProductListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D1038D72BEB5E89000BE5B0 /* AccountView.swift in Sources */,
+				7DDD9B522BEBC4EA00FF22FE /* ProductDetailView.swift in Sources */,
 				7D1038D52BEB5E83000BE5B0 /* OrdersView.swift in Sources */,
 				7D1038E62BEB900B000BE5B0 /* ModelData.swift in Sources */,
 				7D1038D12BEB5E72000BE5B0 /* HomeView.swift in Sources */,
