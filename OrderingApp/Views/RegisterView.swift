@@ -13,19 +13,19 @@ struct RegisterView: View {
     var body: some View {
         NavigationView {
             Form {
-                TextField("First Name", text: $viewModel.firstName)
+                TextField("First Name", text: $viewModel.user.firstName)
                     .padding()
-                TextField("Last Name", text: $viewModel.lastName)
+                TextField("Last Name", text: $viewModel.user.lastName)
                     .padding()
-                TextField("Email", text: $viewModel.email)
+                TextField("Email", text: $viewModel.user.email)
                     .keyboardType(.emailAddress)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     .padding()
-                SecureField("Password", text: $viewModel.password)
+                SecureField("Password", text: $viewModel.user.password)
                     .padding()
                     .keyboardType(.emailAddress)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                DatePicker("Date of Birth", selection: $viewModel.birthDate, displayedComponents: .date)
+                DatePicker("Date of Birth", selection: $viewModel.user.birthDate, displayedComponents: .date)
                     .padding()
                 Button {
                     viewModel.saveChanges()
@@ -41,6 +41,9 @@ struct RegisterView: View {
                 .padding()
             }
             .navigationTitle("Register")
+        }
+        .alert(item: $viewModel.alert) { alert in
+            Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissBtn)
         }
     }
 }

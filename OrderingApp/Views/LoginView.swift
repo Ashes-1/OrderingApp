@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
+    @StateObject var viewModel = AccountViewModel()
     @Binding var showRegistration: Bool
     
     var body: some View {
@@ -19,12 +18,12 @@ struct LoginView: View {
                     .font(.system(size: 40))
                     .foregroundColor(Color("brandColor"))
                     .padding()
-                TextField("Email", text: $email)
+                TextField("Email", text: $viewModel.user.email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                     .keyboardType(.emailAddress)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                SecureField("Password", text: $password)
+                SecureField("Password", text: $viewModel.user.password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                     .keyboardType(.emailAddress)
