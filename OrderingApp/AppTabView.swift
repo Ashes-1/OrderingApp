@@ -8,27 +8,26 @@
 import SwiftUI
 
 struct AppTabView: View {
+    @EnvironmentObject var cart: Cart
+    
     var body: some View {
         TabView {
             HomeView()
-                .tabItem() {
-                    Image(systemName: "house.fill")
-                    Text("Home")
+                .tabItem {
+                    Label("Home", systemImage: "house.fill")
                 }
             CartView()
                 .tabItem {
-                    Image(systemName: "cart.fill")
-                    Text("Cart")
+                    Label("Cart", systemImage: "cart.fill")
                 }
+                .badge(cart.items.count)
             OrdersView()
                 .tabItem {
-                    Image(systemName: "doc.text.fill")
-                    Text("Orders")
+                    Label("Orders", systemImage: "doc.text.fill")
                 }
             AccountView()
                 .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Account")
+                    Label("Account", systemImage: "person.fill")
                 }
         }
         .accentColor(Color("brandColor"))
