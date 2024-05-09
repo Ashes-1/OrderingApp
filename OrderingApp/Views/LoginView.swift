@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @StateObject var viewModel = AccountViewModel()
     @Binding var showRegistration: Bool
-    @Binding var showAppTabView: Bool //new
+    @Binding var showAppTabView: Bool
     
     var body: some View {
         NavigationView {
@@ -51,11 +51,6 @@ struct LoginView: View {
                     Button("Register") {
                         showRegistration = true
                     }
-//                    NavigationLink(destination: RegisterView(), isActive: $showRegistration) {
-//                        Button("Register") {
-//                            showRegistration = true
-//                        }
-//                    }
                 }
                 .padding()
             }
@@ -71,7 +66,7 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     @State static private var showRegistration = false
-    @State static private var showAppTabView = false //new
+    @State static private var showAppTabView = false
     
     static var previews: some View {
         LoginView(showRegistration: $showRegistration, showAppTabView: $showAppTabView)

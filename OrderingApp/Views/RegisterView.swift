@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     @StateObject var viewModel = AccountViewModel()
-    @Environment(\.presentationMode) var presentationMode //new
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {

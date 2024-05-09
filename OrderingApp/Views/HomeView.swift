@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject var modelData = ModelData()
     @State private var showDetail = false
-    @State private var selectProduct: Product? //new
+    @State private var selectProduct: Product?
     
     var body: some View {
         NavigationView {
@@ -23,7 +23,7 @@ struct HomeView: View {
                     ForEach(modelData.products.filter { $0.category == "Hot" }) { product in
                         ProductListCell(product: product)
                             .onTapGesture {
-                                selectProduct = product //new
+                                selectProduct = product
                                 showDetail = true
                             }
                     }
@@ -36,14 +36,14 @@ struct HomeView: View {
                     ForEach(modelData.products.filter { $0.category == "Cold" }) { product in
                         ProductListCell(product: product)
                             .onTapGesture {
-                                selectProduct = product //new
+                                selectProduct = product
                                 showDetail = true
                             }
                     }
                 }
             }
             .navigationTitle("Drinks")
-            .sheet(isPresented: $showDetail) { //new
+            .sheet(isPresented: $showDetail) {
                 if let selectProduct = selectProduct {
                     ProductDetailView(product: selectProduct, isPresented: $showDetail)
                 }

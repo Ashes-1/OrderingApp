@@ -100,17 +100,6 @@ struct AccountView: View {
                                 .multilineTextAlignment(.center)
                         }
                         .padding()
-                        
-//                        NavigationLink(destination: RegisterView()) {
-//                            Text("Register")
-//                                .font(.title3)
-//                                .fontWeight(.semibold)
-//                                .frame(width: 300, height: 50)
-//                                .foregroundColor(.white)
-//                                .background(Color("brandColor"))
-//                                .multilineTextAlignment(.center)
-//                        }
-//                        .padding()
                     }
                 }
             }
@@ -119,7 +108,6 @@ struct AccountView: View {
         .onAppear() {
             viewModel.retrieveUser()
         }
-        //new
         .onChange(of: viewModel.isLoggedIn) { userDeets in
             if userDeets {
                 viewModel.retrieveUser()
@@ -132,87 +120,6 @@ struct AccountView: View {
             AppTabView()
         })
     }
-    
-//    var body: some View {
-//        NavigationView {
-//            VStack {
-//                if viewModel.isLoggedIn {
-//                    Form {
-//                        Section(header: Text("My Details")) {
-//                            HStack {
-//                                Text("First Name:")
-//                                Spacer()
-//                                Text(viewModel.user.firstName)
-//                            }
-//                            HStack {
-//                                Text("Last Name:")
-//                                Spacer()
-//                                Text(viewModel.user.lastName)
-//                            }
-//                            HStack {
-//                                Text("Email:")
-//                                Spacer()
-//                                Text(viewModel.user.email)
-//                            }
-//                            HStack {
-//                                Text("Password:")
-//                                Spacer()
-//                                Text(String(repeating: "*", count: viewModel.user.password.count))
-//                            }
-//                            HStack {
-//                                Text("Date of Birth:")
-//                                Spacer()
-//                                Text(viewModel.user.birthDate, formatter: Self.dateFormatter)
-//                            }
-//                        }
-//                        Section {
-//                            Button {
-//                                viewModel.logout()
-//                            } label: {
-//                                Text("Logout")
-//                                    .foregroundColor(.red)
-//                            }
-//                        }
-//                    }
-//                }
-//                else {
-//                    VStack {
-//                        Image(systemName: "person.crop.circle.badge.questionmark.fill")
-//                            .font(.system(size: 60))
-//                            .foregroundColor(Color("brandColor"))
-//                            .padding()
-//                        Text("You are currently signed out.")
-//                            .padding(.bottom, 60)
-//                        NavigationLink(destination: LoginView(showRegistration: $showRegistration, showAppTabView: $showAppTabView)) {
-//                            Text("Login / Sign Up")
-//                                .font(.title3)
-//                                .fontWeight(.semibold)
-//                                .frame(width: 300, height: 50)
-//                                .foregroundColor(.white)
-//                                .background(Color("brandColor"))
-//                                .multilineTextAlignment(.center)
-//                        }
-//                        .padding()
-//                    }
-//                }
-//            }
-//            .navigationTitle("Account")
-//        }
-//        .onAppear {
-//            viewModel.retrieveUser()
-//        }
-//        .onChange(of: viewModel.isLoggedIn) { userDeets in
-//            if userDeets {
-//                viewModel.retrieveUser()
-//            }
-//        }
-//        .alert(item: $viewModel.alert) { alert in
-//            Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissBtn)
-//        }
-//        .fullScreenCover(isPresented: $showAppTabView, content: {
-//            AppTabView()
-//        })
-//    }
     
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
