@@ -44,6 +44,7 @@ final class AccountViewModel: ObservableObject {
         //decode
         do {
             user = try JSONDecoder().decode(User.self, from: userData)
+            isLoggedIn = true //new
         }
         catch {
             alert = AlertContext.invalidData
@@ -61,6 +62,7 @@ final class AccountViewModel: ObservableObject {
             let user = try JSONDecoder().decode(User.self, from: userData)
             if user.email == email && user.password == password {
                 isLoggedIn = true
+                self.user = user //set user property
             }
             else {
                 isLoggedIn = false
@@ -76,6 +78,7 @@ final class AccountViewModel: ObservableObject {
     //new
     func logout() {
         isLoggedIn = false
+        user = User() //new - resets user data
     }
 }
 
