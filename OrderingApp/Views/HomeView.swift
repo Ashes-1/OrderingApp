@@ -43,6 +43,7 @@ struct HomeView: View {
                 }
             }
             .navigationTitle("Drinks")
+            .listStyle(.plain)
             .sheet(isPresented: $showDetail) {
                 if let selectProduct = selectProduct {
                     ProductDetailView(product: selectProduct, isPresented: $showDetail)
@@ -60,5 +61,6 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
             .environmentObject(ModelData())
+            .environmentObject(Cart())
     }
 }

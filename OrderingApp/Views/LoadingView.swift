@@ -50,4 +50,5 @@ struct LoadingView: View {
 
 #Preview {
     LoadingView()
+        .environmentObject(Cart())
 }

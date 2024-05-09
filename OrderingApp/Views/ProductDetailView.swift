@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProductDetailView: View {
+    @EnvironmentObject var cart: Cart //new
+    
     let product: Product
     @Binding var isPresented: Bool
     
@@ -30,7 +32,8 @@ struct ProductDetailView: View {
             Spacer()
             
             Button {
-                print("tapped")
+                cart.add(product) //new
+                isPresented = false
             } label: {
                 Text("total price")
                     .font(.title3)
@@ -124,6 +127,7 @@ struct ProductDetailView_Previews: PreviewProvider {
         let decoder = JSONDecoder()
         if let sampleProduct = try? decoder.decode(Product.self, from: Data(sampleJSON.utf8)) {
             ProductDetailView(product: sampleProduct, isPresented: $isPresented)
+                .environmentObject(Cart())
         }
     }
 }
