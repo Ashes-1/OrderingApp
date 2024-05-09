@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     @StateObject var viewModel = AccountViewModel()
+    @Environment(\.presentationMode) var presentationMode //new
     
     var body: some View {
         NavigationView {
@@ -41,6 +42,14 @@ struct RegisterView: View {
                 .padding()
             }
             .navigationTitle("Register")
+            .navigationBarItems(trailing: Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Image(systemName: "xmark")
+                    .frame(width: 50, height: 50)
+                    .imageScale(.large)
+                    .foregroundColor(Color("brandColor"))
+            }))
         }
         .alert(item: $viewModel.alert) { alert in
             Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissBtn)

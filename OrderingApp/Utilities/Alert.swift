@@ -32,4 +32,13 @@ struct AlertContext {
     static let invalidData = AlertItem(title: Text("Error!"),
                                    message: Text("There was an error in retrieving your profile."),
                                    dismissBtn: .default(Text("OK")))
+    
+    //new
+    static let invalidCredentials = AlertItem(title: Text("Error!"),
+                                   message: Text("Invalid login credentials. Please try again."),
+                                   dismissBtn: .default(Text("OK")))
+    
+//    static let successLogin = AlertItem(title: Text("Success!"),
+//                                   message: Text("You have succesfully logged in."),
+//                                   dismissBtn: .default(Text("OK")))
 }

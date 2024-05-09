@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductDetailView: View {
     let product: Product
-    @Binding var isPresented: Bool //new
+    @Binding var isPresented: Bool
     
     var body: some View {
         VStack {
@@ -75,7 +75,7 @@ struct ProductDetailView: View {
 }
 
 struct ProductDetailView_Previews: PreviewProvider {
-    @State static var isPresented = false //new
+    @State static var isPresented = false
     static var previews: some View {
         let sampleJSON = """
         {

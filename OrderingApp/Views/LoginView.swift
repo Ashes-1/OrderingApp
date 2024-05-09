@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @StateObject var viewModel = AccountViewModel()
     @Binding var showRegistration: Bool
+    @Binding var showAppTabView: Bool //new
     
     var body: some View {
         NavigationView {
@@ -29,7 +30,11 @@ struct LoginView: View {
                     .keyboardType(.emailAddress)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                 Button {
-                    //perform action
+                    //new
+                    viewModel.login(email: viewModel.user.email, password: viewModel.user.password)
+                    if viewModel.isLoggedIn {
+                        showAppTabView = true
+                    }
                 } label: {
                     Text("Login")
                         .font(.title3)
@@ -43,13 +48,22 @@ struct LoginView: View {
                 
                 HStack {
                     Text("Don't have an account?")
-                    NavigationLink(destination: RegisterView(), isActive: $showRegistration) {
-                        Button("Register") {
-                            showRegistration = true
-                        }
+                    Button("Register") {
+                        showRegistration = true
                     }
+//                    NavigationLink(destination: RegisterView(), isActive: $showRegistration) {
+//                        Button("Register") {
+//                            showRegistration = true
+//                        }
+//                    }
                 }
                 .padding()
+            }
+            .sheet(isPresented: $showRegistration) {
+                RegisterView()
+            }
+            .alert(item: $viewModel.alert) { alert in
+                Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissBtn)
             }
         }
     }
@@ -57,8 +71,9 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     @State static private var showRegistration = false
+    @State static private var showAppTabView = false //new
     
     static var previews: some View {
-        LoginView(showRegistration: $showRegistration)
+        LoginView(showRegistration: $showRegistration, showAppTabView: $showAppTabView)
     }
 }

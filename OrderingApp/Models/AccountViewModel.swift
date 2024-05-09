@@ -12,6 +12,7 @@ final class AccountViewModel: ObservableObject {
     @Published var user = User()
     @Published var alert: AlertItem?
     @AppStorage("user") private var userData: Data?
+    @Published var isLoggedIn = false //new
  
     var isValidForm: Bool {
         guard !user.firstName.isEmpty && !user.lastName.isEmpty && !user.email.isEmpty else {
@@ -47,6 +48,34 @@ final class AccountViewModel: ObservableObject {
         catch {
             alert = AlertContext.invalidData
         }
+    }
+    
+    //new
+    func login(email: String, password: String) {
+        guard let userData = userData else {
+            isLoggedIn = false
+            alert = AlertContext.invalidCredentials
+            return
+        }
+        do {
+            let user = try JSONDecoder().decode(User.self, from: userData)
+            if user.email == email && user.password == password {
+                isLoggedIn = true
+            }
+            else {
+                isLoggedIn = false
+                alert = AlertContext.invalidCredentials
+            }
+        }
+        catch {
+            isLoggedIn = false
+            alert = AlertContext.invalidData
+        }
+    }
+    
+    //new
+    func logout() {
+        isLoggedIn = false
     }
 }
 
