@@ -31,7 +31,7 @@ struct AccountView: View {
                             }
                             Button {
                                 viewModel.saveChanges()
-                                editMode = false //new
+                                editMode = false
                             } label: {
                                 Text("Save Changes")
                             }

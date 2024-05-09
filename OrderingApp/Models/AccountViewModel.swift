@@ -40,7 +40,10 @@ final class AccountViewModel: ObservableObject {
     }
     
     func retrieveUser() {
-        guard let userData = userData else { return }
+        guard let userData = userData else {
+            isLoggedIn = false
+            return
+        }
         //decode
         do {
             user = try JSONDecoder().decode(User.self, from: userData)
@@ -51,7 +54,6 @@ final class AccountViewModel: ObservableObject {
         }
     }
     
-    //new
     func login(email: String, password: String) {
         guard let userData = userData else {
             isLoggedIn = false
@@ -75,10 +77,8 @@ final class AccountViewModel: ObservableObject {
         }
     }
     
-    //new
     func logout() {
         isLoggedIn = false
-        user = User() //resets user data
     }
 }
 
