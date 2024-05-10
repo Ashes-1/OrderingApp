@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductDetailView: View {
-    @EnvironmentObject var cart: Cart //new
+    @EnvironmentObject var cart: Cart
     
     let product: Product
     @Binding var isPresented: Bool
@@ -17,14 +17,19 @@ struct ProductDetailView: View {
     let milkOptions: [Option]
     let addons: [Option]
     
-    @State private var selectedSize: Option? //new
-    @State private var selectedMilk: Option? //new
-    @State private var selectedAddons: [Option] = [] //new
-    var totalPrice: Double { //new
+    @State private var selectedSize: Option?
+    @State private var selectedMilk: Option?
+    @State private var selectedAddons: [Option] = []
+    
+    var totalPrice: Double {
         let sizePrice = selectedSize?.price ?? 0
         let milkPrice = selectedMilk?.price ?? 0
         let addonsPrice = selectedAddons.reduce(0) { $0 + $1.price }
         return sizePrice + milkPrice + addonsPrice
+    }
+    
+    var buttonDisabled: Bool {
+        selectedSize == nil || selectedMilk == nil
     }
     
     var body: some View {
@@ -123,7 +128,7 @@ struct ProductDetailView: View {
                 Spacer()
                     
                 Button {
-                    cart.add(product) //new
+                    cart.add(product)
                     isPresented = false
                 } label: {
                     Text("$\(totalPrice, specifier: "%.2f") - Add to Cart")
@@ -131,9 +136,10 @@ struct ProductDetailView: View {
                         .fontWeight(.semibold)
                         .frame(width: 260, height: 50)
                         .foregroundColor(.white)
-                        .background(Color("brandColor"))
+                        .background(buttonDisabled ? Color.gray : Color("brandColor"))
                 }
                 .padding(.bottom, 30)
+                .disabled(buttonDisabled)
             }
             .overlay(Button(action: {
                 isPresented = false // Close the sheet

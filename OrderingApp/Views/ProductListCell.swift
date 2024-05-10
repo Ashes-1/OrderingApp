@@ -16,9 +16,13 @@ struct ProductListCell: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
-            Text(product.name)
-                .font(.title2)
-                .fontWeight(.medium)
+            VStack {
+                Text(product.name)
+                    .font(.title2)
+                    .fontWeight(.medium)
+//                Text("$\(product.size + product.milk + product.addons, specifier: "%.2f")") //new
+//                    .font(.subheadline)
+            }
         }
     }
 }
@@ -29,6 +33,7 @@ struct ProductListCell_Previews: PreviewProvider {
         """
         let decoder = JSONDecoder()
         if let sampleProduct = try? decoder.decode(Product.self, from: Data(sampleJSON.utf8)) {
+
             ProductListCell(product: sampleProduct)
         }
     }
