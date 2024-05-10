@@ -51,10 +51,6 @@ struct HomeView: View {
             }
         }
     }
-    
-    func getProducts() {
-        
-    }
 }
 
 struct HomeView_Previews: PreviewProvider {

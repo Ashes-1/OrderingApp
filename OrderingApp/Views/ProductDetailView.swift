@@ -206,14 +206,3 @@ struct ProductDetailView_Previews: PreviewProvider {
         }
     }
 }
-
-//struct ProductDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let sampleJSON = """
-//        """
-//        let decoder = JSONDecoder()
-//        if let sampleProduct = try? decoder.decode(Product.self, from: Data(sampleJSON.utf8)) {
-//            ProductDetailView(product: sampleProduct)
-//         }
-//    }
-//}

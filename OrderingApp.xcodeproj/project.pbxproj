@@ -29,7 +29,6 @@
 		7DDD9B592BEBDB6E00FF22FE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD9B582BEBDB6E00FF22FE /* LoadingView.swift */; };
 		7DDD9B5B2BEBE22400FF22FE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD9B5A2BEBE22400FF22FE /* LoginView.swift */; };
 		7DDD9B5D2BEBE37800FF22FE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD9B5C2BEBE37800FF22FE /* RegisterView.swift */; };
-		7DDD9B5F2BEBEA1E00FF22FE /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD9B5E2BEBEA1E00FF22FE /* LandingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +55,6 @@
 		7DDD9B582BEBDB6E00FF22FE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		7DDD9B5A2BEBE22400FF22FE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7DDD9B5C2BEBE37800FF22FE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		7DDD9B5E2BEBEA1E00FF22FE /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +123,6 @@
 		7D1038DB2BEB72AD000BE5B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7DDD9B5E2BEBEA1E00FF22FE /* LandingView.swift */,
 				7DDD9B582BEBDB6E00FF22FE /* LoadingView.swift */,
 				7DDD9B5A2BEBE22400FF22FE /* LoginView.swift */,
 				7DDD9B5C2BEBE37800FF22FE /* RegisterView.swift */,
@@ -241,7 +238,6 @@
 				7D43F4BB2BEC9ECA007726CB /* Alert.swift in Sources */,
 				7D1038E62BEB900B000BE5B0 /* ModelData.swift in Sources */,
 				7D43F4C22BED4A11007726CB /* EmptyView.swift in Sources */,
-				7DDD9B5F2BEBEA1E00FF22FE /* LandingView.swift in Sources */,
 				7D43F4C42BED4E24007726CB /* Cart.swift in Sources */,
 				7D1038D12BEB5E72000BE5B0 /* HomeView.swift in Sources */,
 				7DDD9B542BEBD68600FF22FE /* AccountViewModel.swift in Sources */,
