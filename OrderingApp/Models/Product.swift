@@ -23,7 +23,7 @@ struct Product: Decodable, Identifiable {
     }
 }
 
-struct Option: Decodable {
+struct Option: Decodable, Equatable { //new - equatable
     let name: String
     let price: Double
 }

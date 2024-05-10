@@ -46,7 +46,7 @@ struct HomeView: View {
             .listStyle(.plain)
             .sheet(isPresented: $showDetail) {
                 if let selectProduct = selectProduct {
-                    ProductDetailView(product: selectProduct, isPresented: $showDetail)
+                    ProductDetailView(product: selectProduct, isPresented: $showDetail, sizes: selectProduct.size, milkOptions: selectProduct.milk, addons: selectProduct.addons)
                 }
             }
         }
