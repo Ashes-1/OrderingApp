@@ -23,6 +23,10 @@ final class Cart: ObservableObject {
     func delete(at offesets: IndexSet) {
         items.remove(atOffsets: offesets)
     }
+    
+    func placeOrder() {
+        items.removeAll() //clears cart after order placed
+    }
 }
 
 struct CartItem: Identifiable {

@@ -8,10 +8,26 @@
 import SwiftUI
 
 struct OrdersView: View {
+    @EnvironmentObject var ordersViewModel: OrdersViewModel
+    
     var body: some View {
         NavigationView {
-            Text("Orders View")
-                .navigationTitle("Orders")
+            List {
+                ForEach(ordersViewModel.orders) { order in
+                    VStack {
+                        Text("Date: \(order.date, style: .date)")
+                            .padding(.bottom)
+                        if (order.itemTotal > 1) {
+                            Text("\(order.itemTotal) items  ·  $\(order.totalPrice, specifier: "%.2f")")
+                        }
+                        else {
+                            Text("\(order.itemTotal) item  ·  $\(order.totalPrice, specifier: "%.2f")")
+                        }
+                        Text("Completed")
+                    }
+                }
+            }
+            .navigationTitle("Order History")
         }
     }
 }
@@ -19,5 +35,6 @@ struct OrdersView: View {
 struct OrdersView_Previews: PreviewProvider {
     static var previews: some View {
         OrdersView()
+            .environmentObject(OrdersViewModel())
     }
 }

@@ -38,7 +38,7 @@ struct AlertContext {
                                    message: Text("Invalid login credentials. Please try again."),
                                    dismissBtn: .default(Text("OK")))
     
-//    static let successLogin = AlertItem(title: Text("Success!"),
-//                                   message: Text("You have succesfully logged in."),
-//                                   dismissBtn: .default(Text("OK")))
+    static let orderPlaced = AlertItem(title: Text("Success!"),
+                                   message: Text("Your order has successfully been placed."),
+                                   dismissBtn: .default(Text("OK")))
 }
