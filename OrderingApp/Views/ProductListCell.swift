@@ -20,8 +20,6 @@ struct ProductListCell: View {
                 Text(product.name)
                     .font(.title2)
                     .fontWeight(.medium)
-//                Text("$\(product.size + product.milk + product.addons, specifier: "%.2f")") //new
-//                    .font(.subheadline)
             }
         }
     }

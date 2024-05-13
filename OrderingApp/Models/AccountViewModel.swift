@@ -11,9 +11,10 @@ import SwiftUI
 final class AccountViewModel: ObservableObject {
     @Published var user = User()
     @Published var alert: AlertItem?
-    @AppStorage("user") private var userData: Data?
-    @AppStorage("loggedIn") var isLoggedIn = false
+    @AppStorage("user") private var userData: Data? //stores user data in UserDefaults
+    @AppStorage("loggedIn") var isLoggedIn = false //stores if a user is logged in to UserDefaults
  
+    //checks that form is filled in correctly
     var isValidForm: Bool {
         guard !user.firstName.isEmpty && !user.lastName.isEmpty && !user.email.isEmpty else {
             alert = AlertContext.invalidForm
@@ -26,6 +27,7 @@ final class AccountViewModel: ObservableObject {
         return true
     }
     
+    //lets user update details
     func saveChanges() {
         guard isValidForm else { return }
         //encode user into data, and saving the data into user defaults
@@ -39,6 +41,7 @@ final class AccountViewModel: ObservableObject {
         }
     }
     
+    //retrieves data for user
     func retrieveUser() {
         guard let userData = userData else {
             isLoggedIn = false
@@ -54,6 +57,7 @@ final class AccountViewModel: ObservableObject {
         }
     }
     
+    //checks credentials to be able to log in
     func login(email: String, password: String) {
         guard let userData = userData else {
             isLoggedIn = false
@@ -82,5 +86,3 @@ final class AccountViewModel: ObservableObject {
         user = User() //resets user object when user logs out
     }
 }
-
-

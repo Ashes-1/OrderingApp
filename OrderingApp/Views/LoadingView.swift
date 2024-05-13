@@ -38,6 +38,7 @@ struct LoadingView: View {
                 }
             }
             .onAppear {
+                //4 second delay for loading animation
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
                     withAnimation {
                         self.isActive = true

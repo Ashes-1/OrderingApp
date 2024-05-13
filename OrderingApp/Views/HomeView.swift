@@ -13,7 +13,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            List {
+            List { //divide two sections for category 'hot' or 'cold' drinks
                 Section(header: Text("Hot Drinks")
                     .font(.title2)
                     .fontWeight(.bold)
@@ -21,7 +21,7 @@ struct HomeView: View {
                 ) {
                     ForEach(modelData.products.filter { $0.category == "Hot" }) { product in
                         ProductListCell(product: product)
-                            .onTapGesture {
+                            .onTapGesture { //when tap on product it selects it
                                 selectProduct = product
                             }
                     }
@@ -41,6 +41,7 @@ struct HomeView: View {
             }
             .navigationTitle("Drinks")
             .listStyle(.plain)
+            //sheet view shows details when product is selected
             .sheet(item: $selectProduct) { product in
                 ProductDetailView(product: product, sizes: product.size, milkOptions: product.milk, addons: product.addons)
             }

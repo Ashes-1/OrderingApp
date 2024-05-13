@@ -15,6 +15,7 @@ struct ProductDetailView: View {
     let sizes: [Option]
     let milkOptions: [Option]
     let addons: [Option]
+    //allows us to track the selected options that the user picked
     @State private var selectedSize: Option?
     @State private var selectedMilk: Option?
     @State private var selectedAddons: [Option] = []
@@ -22,10 +23,11 @@ struct ProductDetailView: View {
     var totalPrice: Double {
         let sizePrice = selectedSize?.price ?? 0
         let milkPrice = selectedMilk?.price ?? 0
-        let addonsPrice = selectedAddons.reduce(0) { $0 + $1.price }
+        let addonsPrice = selectedAddons.reduce(0) { $0 + $1.price } //accumulate addon pricing
         return sizePrice + milkPrice + addonsPrice
     }
     
+    //can't add product unless you choose a size or milk type
     var buttonDisabled: Bool {
         selectedSize == nil || selectedMilk == nil
     }
@@ -53,18 +55,20 @@ struct ProductDetailView: View {
                         .font(.headline)
                     ) {
                         ForEach(sizes, id: \.name) { size in
+                            //each size option from the database will be iterated and shown
                             HStack {
                                 Text(size.name)
                                 Spacer()
                                 Text("$\(size.price, specifier: "%.2f")")
                                 
+                                //when an option is selected, it shows a checkmark
                                 if selectedSize == size {
                                     Image(systemName: "checkmark")
                                         .foregroundColor(.accentColor)
                                 }
                             }
                             .contentShape(Rectangle())
-                            .onTapGesture {
+                            .onTapGesture { //updates the selected size when tapped
                                 selectedSize = size
                             }
                         }
@@ -123,7 +127,9 @@ struct ProductDetailView: View {
                 .padding()
             }
             Spacer()
-                    
+            
+            //this button allows user to add it to cart as CartItem, and closes the details once tapped
+            //size and milk must be chosen to be able to press the button
             Button {
                 let item = CartItem(product: product, selectedSize: selectedSize!, selectedMilk: selectedMilk!, selectedAddons: selectedAddons)
                 cart.add(item)
@@ -139,7 +145,7 @@ struct ProductDetailView: View {
             .padding(.bottom, 30)
             .disabled(buttonDisabled)
         }
-        .overlay(Button(action: {
+        .overlay(Button(action: { //x button can close the view
             presentationMode.wrappedValue.dismiss()
         }) {
             ZStack {

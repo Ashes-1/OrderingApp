@@ -28,7 +28,7 @@ struct RegisterView: View {
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                 DatePicker("Date of Birth", selection: $viewModel.user.birthDate, displayedComponents: .date)
                     .padding()
-                Button {
+                Button { //when button is tapped it will save user details in the Account model
                     viewModel.saveChanges()
                 } label: {
                     Text("Register")
@@ -42,6 +42,7 @@ struct RegisterView: View {
                 .padding()
             }
             .navigationTitle("Register")
+            //x button closes view once tapped
             .navigationBarItems(trailing: Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }, label: {

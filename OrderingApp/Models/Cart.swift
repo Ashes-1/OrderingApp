@@ -13,7 +13,7 @@ final class Cart: ObservableObject {
     @Published var items: [CartItem] = []
     
     var totalPrice: Double {
-        items.reduce(0) { $0 + $1.totalPrice }
+        items.reduce(0) { $0 + $1.totalPrice } //accumulates price based on items being added
     }
     
     func add(_ item: CartItem) {
@@ -21,7 +21,7 @@ final class Cart: ObservableObject {
     }
     
     func delete(at offesets: IndexSet) {
-        items.remove(atOffsets: offesets)
+        items.remove(atOffsets: offesets) //removes cart items at specified offsets
     }
     
     func placeOrder() {

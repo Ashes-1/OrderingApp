@@ -19,13 +19,13 @@ struct CartView: View {
                 VStack {
                     List {
                         ForEach(cart.items) { item in
-                            ProductListCell(product: item.product)
+                            ProductListCell(product: item.product) //each cart item displayed in cell
                         }
                         .onDelete(perform: cart.delete)
                     }
                     .listStyle(.plain)
                     
-                    Button {
+                    Button { //adds order to order history
                         let order = Order(items: cart.items, date: Date(), totalPrice: cart.totalPrice)
                         ordersViewModel.addOrder(order)
                         cart.placeOrder()
@@ -46,7 +46,7 @@ struct CartView: View {
                     .padding(.bottom, 20)
                 }
                 .onChange(of: accountViewModel.isLoggedIn) { isLoggedIn in
-                    if !isLoggedIn {
+                    if !isLoggedIn { //if user isn't logged in it clears their order history
                         ordersViewModel.clearOrders()
                     }
                 }
@@ -63,5 +63,6 @@ struct CartView_Previews: PreviewProvider {
     static var previews: some View {
         CartView()
             .environmentObject(Cart())
+            .environmentObject(AccountViewModel())
     }
 }

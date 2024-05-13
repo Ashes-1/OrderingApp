@@ -30,7 +30,7 @@ struct LoginView: View {
                     .keyboardType(.emailAddress)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                 Button {
-                    //new
+                    //allows user to login with correct credentials and shows AppTabView
                     viewModel.login(email: viewModel.user.email, password: viewModel.user.password)
                     if viewModel.isLoggedIn {
                         showAppTabView = true
@@ -54,7 +54,7 @@ struct LoginView: View {
                 }
                 .padding()
             }
-            .sheet(isPresented: $showRegistration) {
+            .sheet(isPresented: $showRegistration) { //shows registration screen
                 RegisterView()
             }
             .alert(item: $viewModel.alert) { alert in

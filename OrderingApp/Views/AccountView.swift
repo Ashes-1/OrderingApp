@@ -16,9 +16,9 @@ struct AccountView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if viewModel.isLoggedIn {
+                if viewModel.isLoggedIn { //only show user details if logged in
                     Form {
-                        if editMode {
+                        if editMode { //appears only if user edit details
                             Section(header: Text("My Details")) {
                                 TextField("First Name", text: $viewModel.user.firstName)
                                 TextField("Last Name", text: $viewModel.user.lastName)
@@ -36,7 +36,7 @@ struct AccountView: View {
                                 Text("Save Changes")
                             }
                         }
-                        else {
+                        else { //if not editing show details only
                             Section(header: Text("My Details")) {
                                 HStack {
                                     Text("First Name:")
@@ -82,7 +82,7 @@ struct AccountView: View {
                         }
                     }
                 }
-                else {
+                else { //if user not logged in, show option to log in or register
                     VStack {
                         Image(systemName: "person.crop.circle.badge.questionmark.fill")
                             .font(.system(size: 60))
@@ -105,7 +105,7 @@ struct AccountView: View {
             }
             .navigationTitle("Account")
         }
-        .onAppear() {
+        .onAppear() { //if user is already logged in, account view would show details always
             if viewModel.isLoggedIn {
                 viewModel.retrieveUser()
             }

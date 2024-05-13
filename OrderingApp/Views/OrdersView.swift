@@ -15,6 +15,7 @@ struct OrdersView: View {
             List {
                 ForEach(ordersViewModel.orders) { order in
                     VStack {
+                        //every order shown will have these details listed below
                         Text("Date: \(order.date, style: .date)")
                             .padding(.bottom)
                         if (order.itemTotal > 1) {
