@@ -106,10 +106,7 @@ struct AccountView: View {
             .navigationTitle("Account")
         }
         .onAppear() {
-            viewModel.retrieveUser()
-        }
-        .onChange(of: viewModel.isLoggedIn) { userDeets in
-            if userDeets {
+            if viewModel.isLoggedIn {
                 viewModel.retrieveUser()
             }
         }

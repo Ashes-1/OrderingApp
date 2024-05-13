@@ -6,12 +6,18 @@
 //
 
 import Foundation
+import SwiftUI
 
 class OrdersViewModel : ObservableObject {
     @Published var orders: [Order] = []
+    @AppStorage("loggedIn") var isLoggedIn = false
     
     func addOrder(_ order: Order) {
         orders.append(order)
+    }
+    
+    func clearOrders() {
+        orders.removeAll()
     }
 }
 

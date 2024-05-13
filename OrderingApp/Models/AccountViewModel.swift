@@ -12,7 +12,7 @@ final class AccountViewModel: ObservableObject {
     @Published var user = User()
     @Published var alert: AlertItem?
     @AppStorage("user") private var userData: Data?
-    @Published var isLoggedIn = false
+    @AppStorage("loggedIn") var isLoggedIn = false
  
     var isValidForm: Bool {
         guard !user.firstName.isEmpty && !user.lastName.isEmpty && !user.email.isEmpty else {
@@ -79,6 +79,7 @@ final class AccountViewModel: ObservableObject {
     
     func logout() {
         isLoggedIn = false
+        user = User() //resets user object when user logs out
     }
 }
 

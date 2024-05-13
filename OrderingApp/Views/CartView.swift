@@ -10,6 +10,7 @@ import SwiftUI
 struct CartView: View {
     @EnvironmentObject var cart: Cart
     @EnvironmentObject var ordersViewModel: OrdersViewModel
+    @EnvironmentObject var accountViewModel: AccountViewModel
     @State private var alert: AlertItem?
     
     var body: some View {
@@ -25,7 +26,6 @@ struct CartView: View {
                     .listStyle(.plain)
                     
                     Button {
-                        print("order placed")
                         let order = Order(items: cart.items, date: Date(), totalPrice: cart.totalPrice)
                         ordersViewModel.addOrder(order)
                         cart.placeOrder()
@@ -44,6 +44,11 @@ struct CartView: View {
                                     Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissBtn)
                                 }
                     .padding(.bottom, 20)
+                }
+                .onChange(of: accountViewModel.isLoggedIn) { isLoggedIn in
+                    if !isLoggedIn {
+                        ordersViewModel.clearOrders()
+                    }
                 }
                 if cart.items.isEmpty {
                     EmptyView(imageName: "emptycarticon", message: "There are no drinks in your cart!")

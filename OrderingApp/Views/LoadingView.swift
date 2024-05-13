@@ -52,4 +52,5 @@ struct LoadingView: View {
     LoadingView()
         .environmentObject(Cart())
         .environmentObject(OrdersViewModel())
+        .environmentObject(AccountViewModel())
 }

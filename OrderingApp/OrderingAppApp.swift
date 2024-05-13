@@ -15,6 +15,7 @@ struct OrderingAppApp: App {
             LoadingView()
                 .environmentObject(Cart())
                 .environmentObject(OrdersViewModel())
+                .environmentObject(AccountViewModel())
         }
     }
 }
