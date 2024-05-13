@@ -120,7 +120,7 @@ struct AccountView: View {
     
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "d MMM yyyy"
+        formatter.dateFormat = "dd MM yyyy"
         return formatter
     }()
     
