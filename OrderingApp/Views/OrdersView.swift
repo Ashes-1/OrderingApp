@@ -26,6 +26,9 @@ struct OrdersView: View {
                         Text("Completed")
                     }
                 }
+                if ordersViewModel.orders.isEmpty {
+                    EmptyView(imageName: "", message: "You have no past orders.")
+                }
             }
             .navigationTitle("Order History")
         }
