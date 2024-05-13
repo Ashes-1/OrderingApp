@@ -10,10 +10,14 @@ import SwiftUI
 
 //new
 final class Cart: ObservableObject {
-    @Published var items: [Product] = []
+    @Published var items: [CartItem] = []
     
-    func add(_ product: Product) {
-        items.append(product)
+    var totalPrice: Double {
+        items.reduce(0) { $0 + $1.totalPrice }
+    }
+    
+    func add(_ item: CartItem) {
+        items.append(item)
     }
     
     func delete(at offesets: IndexSet) {
@@ -21,18 +25,17 @@ final class Cart: ObservableObject {
     }
 }
 
-////new
-//struct CartItem: Identifiable {
-//    let id = UUID()
-//    let product: Product
-//    let selectedSize: Option?
-//    let selectedMilk: Option?
-//    let selectedAddons: [Option]
-//    
-//    var totalPrice: Double {
-//        let sizePrice = selectedSize?.price ?? 0
-//        let milkPrice = selectedMilk?.price ?? 0
-//        let addonsPrice = selectedAddons.reduce(0) { $0 + $1.price }
-//        return sizePrice + milkPrice + addonsPrice
-//    }
-//}
+struct CartItem: Identifiable {
+    let id = UUID()
+    let product: Product
+    let selectedSize: Option
+    let selectedMilk: Option
+    let selectedAddons: [Option]
+    
+    var totalPrice: Double {
+        let sizePrice = selectedSize.price
+        let milkPrice = selectedMilk.price
+        let addonsPrice = selectedAddons.reduce(0) { $0 + $1.price }
+        return sizePrice + milkPrice + addonsPrice
+    }
+}

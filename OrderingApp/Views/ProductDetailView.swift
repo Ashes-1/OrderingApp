@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductDetailView: View {
     @EnvironmentObject var cart: Cart
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentationMode //access presentation mode of view
     let product: Product
     
     let sizes: [Option]
@@ -125,7 +125,8 @@ struct ProductDetailView: View {
             Spacer()
                     
             Button {
-                cart.add(product)
+                let item = CartItem(product: product, selectedSize: selectedSize!, selectedMilk: selectedMilk!, selectedAddons: selectedAddons)
+                cart.add(item)
                 presentationMode.wrappedValue.dismiss() //closes the sheet
             } label: {
                 Text("$\(totalPrice, specifier: "%.2f") - Add to Cart")
