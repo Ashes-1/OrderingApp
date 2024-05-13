@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var modelData = ModelData()
-    @State private var showDetail = false
     @State private var selectProduct: Product?
     
     var body: some View {
@@ -24,7 +23,6 @@ struct HomeView: View {
                         ProductListCell(product: product)
                             .onTapGesture {
                                 selectProduct = product
-                                showDetail = true
                             }
                     }
                 }
@@ -37,17 +35,14 @@ struct HomeView: View {
                         ProductListCell(product: product)
                             .onTapGesture {
                                 selectProduct = product
-                                showDetail = true
                             }
                     }
                 }
             }
             .navigationTitle("Drinks")
             .listStyle(.plain)
-            .sheet(isPresented: $showDetail) {
-                if let selectProduct = selectProduct {
-                    ProductDetailView(product: selectProduct, isPresented: $showDetail, sizes: selectProduct.size, milkOptions: selectProduct.milk, addons: selectProduct.addons)
-                }
+            .sheet(item: $selectProduct) { product in
+                ProductDetailView(product: product, sizes: product.size, milkOptions: product.milk, addons: product.addons)
             }
         }
     }

@@ -9,14 +9,12 @@ import SwiftUI
 
 struct ProductDetailView: View {
     @EnvironmentObject var cart: Cart
-    
+    @Environment(\.presentationMode) var presentationMode
     let product: Product
-    @Binding var isPresented: Bool
     
     let sizes: [Option]
     let milkOptions: [Option]
     let addons: [Option]
-    
     @State private var selectedSize: Option?
     @State private var selectedMilk: Option?
     @State private var selectedAddons: [Option] = []
@@ -33,128 +31,126 @@ struct ProductDetailView: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                ScrollView {
+        VStack {
+            ScrollView {
+                VStack {
+                    product.image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 350, height: 200)
                     VStack {
-                        product.image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 350, height: 200)
-                        VStack {
-                            Text(product.name)
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                            Text(product.description)
-                                .multilineTextAlignment(.center)
-                                .font(.body)
-                                .padding()
-                        }
-                        
-                        Section(header: Text("Size")
-                            .underline()
-                            .font(.headline)
-                        ) {
-                            ForEach(sizes, id: \.name) { size in
-                                HStack {
-                                    Text(size.name)
-                                    Spacer()
-                                    Text("$\(size.price, specifier: "%.2f")")
-                                    
-                                    if selectedSize == size {
-                                        Image(systemName: "checkmark")
-                                            .foregroundColor(.accentColor)
-                                    }
-                                }
-                                .contentShape(Rectangle())
-                                .onTapGesture {
-                                    selectedSize = size
+                        Text(product.name)
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                        Text(product.description)
+                            .multilineTextAlignment(.center)
+                            .font(.body)
+                            .padding()
+                    }
+                    
+                    Section(header: Text("Size")
+                        .underline()
+                        .font(.headline)
+                    ) {
+                        ForEach(sizes, id: \.name) { size in
+                            HStack {
+                                Text(size.name)
+                                Spacer()
+                                Text("$\(size.price, specifier: "%.2f")")
+                                
+                                if selectedSize == size {
+                                    Image(systemName: "checkmark")
+                                        .foregroundColor(.accentColor)
                                 }
                             }
-                        }
-                        
-                        Section(header: Text("Milk")
-                            .underline()
-                            .font(.headline)
-                        ) {
-                            ForEach(milkOptions, id: \.name) { milk in
-                                HStack {
-                                    Text(milk.name)
-                                    Spacer()
-                                    Text("$\(milk.price, specifier: "%.2f")")
-                                    
-                                    if selectedMilk == milk {
-                                        Image(systemName: "checkmark")
-                                            .foregroundColor(.accentColor)
-                                    }
-                                }
-                                .contentShape(Rectangle())
-                                .onTapGesture {
-                                    selectedMilk = milk
-                                }
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                selectedSize = size
                             }
-                        }
-                        
-                        Section(header: Text("Addons")
-                            .underline()
-                            .font(.headline)
-                        ) {
-                            ForEach(addons, id: \.name) { addon in
-                                HStack {
-                                    Text(addon.name)
-                                    Spacer()
-                                    Text("$\(addon.price, specifier: "%.2f")")
-                                    
-                                    if selectedAddons.contains(addon) {
-                                        Image(systemName: "checkmark")
-                                            .foregroundColor(.accentColor)
-                                    }
-                                }
-                                .contentShape(Rectangle())
-                                .onTapGesture {
-                                    if selectedAddons.contains(addon) {
-                                        selectedAddons.removeAll { $0 == addon }
-                                    }
-                                    else {
-                                        selectedAddons.append(addon)
-                                    }
-                                }
-                            }
-                            
                         }
                     }
-                    .padding()
-                }
-                Spacer()
                     
-                Button {
-                    cart.add(product)
-                    isPresented = false
-                } label: {
-                    Text("$\(totalPrice, specifier: "%.2f") - Add to Cart")
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                        .frame(width: 260, height: 50)
-                        .foregroundColor(.white)
-                        .background(buttonDisabled ? Color.gray : Color("brandColor"))
+                    Section(header: Text("Milk")
+                        .underline()
+                        .font(.headline)
+                    ) {
+                        ForEach(milkOptions, id: \.name) { milk in
+                            HStack {
+                                Text(milk.name)
+                                Spacer()
+                                Text("$\(milk.price, specifier: "%.2f")")
+                                    
+                                if selectedMilk == milk {
+                                    Image(systemName: "checkmark")
+                                        .foregroundColor(.accentColor)
+                                }
+                            }
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                selectedMilk = milk
+                            }
+                        }
+                    }
+                    
+                    Section(header: Text("Addons")
+                        .underline()
+                        .font(.headline)
+                    ) {
+                        ForEach(addons, id: \.name) { addon in
+                            HStack {
+                                Text(addon.name)
+                                Spacer()
+                                Text("$\(addon.price, specifier: "%.2f")")
+                                
+                                if selectedAddons.contains(addon) {
+                                    Image(systemName: "checkmark")
+                                        .foregroundColor(.accentColor)
+                                }
+                            }
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                if selectedAddons.contains(addon) {
+                                    selectedAddons.removeAll { $0 == addon }
+                                }
+                                else {
+                                    selectedAddons.append(addon)
+                                }
+                            }
+                        }
+                        
+                    }
                 }
-                .padding(.bottom, 30)
-                .disabled(buttonDisabled)
+                .padding()
             }
-            .overlay(Button(action: {
-                isPresented = false // Close the sheet
-            }) {
-                ZStack {
-                    Circle()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(.white)
-                    Image(systemName: "xmark")
-                        .frame(width: 50, height: 50)
-                        .imageScale(.large)
-                        .foregroundColor(Color("brandColor"))
-                }
-            }, alignment: .topTrailing)
+            Spacer()
+                    
+            Button {
+                cart.add(product)
+                presentationMode.wrappedValue.dismiss() //closes the sheet
+            } label: {
+                Text("$\(totalPrice, specifier: "%.2f") - Add to Cart")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .frame(width: 260, height: 50)
+                    .foregroundColor(.white)
+                    .background(buttonDisabled ? Color.gray : Color("brandColor"))
+            }
+            .padding(.bottom, 30)
+            .disabled(buttonDisabled)
         }
+        .overlay(Button(action: {
+            presentationMode.wrappedValue.dismiss()
+        }) {
+            ZStack {
+                Circle()
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(.white)
+                Image(systemName: "xmark")
+                    .frame(width: 50, height: 50)
+                    .imageScale(.large)
+                    .foregroundColor(Color("brandColor"))
+            }
+        }, alignment: .topTrailing)
     }
 }
 
@@ -207,7 +203,7 @@ struct ProductDetailView_Previews: PreviewProvider {
         
         let decoder = JSONDecoder()
         if let sampleProduct = try? decoder.decode(Product.self, from: Data(sampleJSON.utf8)) {
-            ProductDetailView(product: sampleProduct, isPresented: $isPresented, sizes: sampleProduct.size, milkOptions: sampleProduct.milk, addons: sampleProduct.addons)
+            ProductDetailView(product: sampleProduct, sizes: sampleProduct.size, milkOptions: sampleProduct.milk, addons: sampleProduct.addons)
                 .environmentObject(Cart())
         }
     }
