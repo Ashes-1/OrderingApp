@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject var viewModel = AccountViewModel()
-    @Binding var showRegistration: Bool
-    @Binding var showAppTabView: Bool
-    
+    @StateObject var viewModel: AccountViewModel
+       @Binding var showRegistration: Bool
+       @Binding var showAppTabView: Bool
+       @EnvironmentObject var ordersViewModel: OrdersViewModel
+
+
+
     var body: some View {
         NavigationView {
             VStack {
@@ -54,9 +57,9 @@ struct LoginView: View {
                 }
                 .padding()
             }
-            .sheet(isPresented: $showRegistration) { //shows registration screen
-                RegisterView()
-            }
+            .sheet(isPresented: $showRegistration) { // Shows registration screen
+                           RegisterView(viewModel: AccountViewModel(ordersViewModel: OrdersViewModel()))
+                       }
             .alert(item: $viewModel.alert) { alert in
                 Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissBtn)
             }
@@ -69,6 +72,6 @@ struct LoginView_Previews: PreviewProvider {
     @State static private var showAppTabView = false
     
     static var previews: some View {
-        LoginView(showRegistration: $showRegistration, showAppTabView: $showAppTabView)
+        LoginView(viewModel: AccountViewModel(ordersViewModel: OrdersViewModel()), showRegistration: $showRegistration, showAppTabView: $showAppTabView)
     }
 }

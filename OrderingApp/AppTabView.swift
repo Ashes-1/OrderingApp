@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AppTabView: View {
     @EnvironmentObject var cart: Cart
+        @EnvironmentObject var ordersViewModel: OrdersViewModel
+        @EnvironmentObject var accountViewModel: AccountViewModel
     
     var body: some View {
         TabView {
@@ -39,6 +41,6 @@ struct ContentView_Previews: PreviewProvider {
         AppTabView()
             .environmentObject(Cart())
             .environmentObject(OrdersViewModel())
-            .environmentObject(AccountViewModel())
+            .environmentObject(AccountViewModel(ordersViewModel: OrdersViewModel()))
     }
 }

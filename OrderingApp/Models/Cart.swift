@@ -29,8 +29,8 @@ final class Cart: ObservableObject {
     }
 }
 
-struct CartItem: Identifiable {
-    let id = UUID()
+struct CartItem: Identifiable, Codable {
+    var id = UUID()
     let product: Product
     let selectedSize: Option
     let selectedMilk: Option

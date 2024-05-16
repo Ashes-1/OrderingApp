@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @StateObject var viewModel = AccountViewModel()
-    @Environment(\.presentationMode) var presentationMode
-    
+   
+    @StateObject var viewModel: AccountViewModel
+        @Environment(\.presentationMode) var presentationMode
+        
     var body: some View {
         NavigationView {
             Form {
@@ -58,6 +59,8 @@ struct RegisterView: View {
     }
 }
 
-#Preview {
-    RegisterView()
+struct RegisterView_Previews: PreviewProvider {
+    static var previews: some View {
+        RegisterView(viewModel: AccountViewModel(ordersViewModel: OrdersViewModel()))
+    }
 }

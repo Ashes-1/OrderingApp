@@ -13,4 +13,7 @@ struct User: Codable {
     var email = ""
     var password = ""
     var birthDate = Date()
+    var orders: [Order] = []
+
 }
+

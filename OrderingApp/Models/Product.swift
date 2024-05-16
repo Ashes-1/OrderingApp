@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Product: Decodable, Identifiable {
+struct Product: Identifiable, Codable {
     let id: String
     let name: String
     let category: String
@@ -23,7 +23,7 @@ struct Product: Decodable, Identifiable {
     }
 }
 
-struct Option: Decodable, Equatable {
+struct Option: Equatable, Codable {
     let name: String
     let price: Double
 }

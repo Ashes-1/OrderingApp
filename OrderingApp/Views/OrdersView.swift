@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OrdersView: View {
     @EnvironmentObject var ordersViewModel: OrdersViewModel
-    
+
     var body: some View {
         NavigationView {
             List {

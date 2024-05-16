@@ -49,9 +49,11 @@ struct LoadingView: View {
     }
 }
 
-#Preview {
-    LoadingView()
-        .environmentObject(Cart())
-        .environmentObject(OrdersViewModel())
-        .environmentObject(AccountViewModel())
+struct LoadingView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoadingView()
+            .environmentObject(Cart())
+            .environmentObject(OrdersViewModel())
+            .environmentObject(AccountViewModel(ordersViewModel: OrdersViewModel()))
+    }
 }

@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct AccountView: View {
-    @StateObject var viewModel = AccountViewModel()
+    @StateObject var viewModel = AccountViewModel(ordersViewModel: OrdersViewModel())
     @State private var editMode = false
     @State private var showRegistration = false
     @State private var showAppTabView = false
-    
+        
     var body: some View {
         NavigationView {
             VStack {
@@ -90,7 +90,8 @@ struct AccountView: View {
                             .padding()
                         Text("You are currently signed out.")
                             .padding(.bottom, 60)
-                        NavigationLink(destination: LoginView(showRegistration: $showRegistration, showAppTabView: $showAppTabView)) {
+                        NavigationLink(destination: LoginView(viewModel: viewModel, showRegistration: $showRegistration, showAppTabView: $showAppTabView)) {
+
                             Text("Login / Sign Up")
                                 .font(.title3)
                                 .fontWeight(.semibold)

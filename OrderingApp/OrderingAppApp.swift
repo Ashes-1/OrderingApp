@@ -9,13 +9,16 @@ import SwiftUI
 
 @main
 struct OrderingAppApp: App {
-    
+    @StateObject var cart = Cart()
+        @StateObject var ordersViewModel = OrdersViewModel()
+        @StateObject var accountViewModel = AccountViewModel(ordersViewModel: OrdersViewModel())
+
     var body: some Scene {
         WindowGroup {
             LoadingView()
-                .environmentObject(Cart())
-                .environmentObject(OrdersViewModel())
-                .environmentObject(AccountViewModel())
-        }
+                .environmentObject(cart)
+                .environmentObject(ordersViewModel)
+                .environmentObject(accountViewModel)
+                        }
     }
 }
