@@ -27,7 +27,7 @@ struct RegisterView: View {
                     .padding()
                     .keyboardType(.emailAddress)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                DatePicker("Date of Birth", selection: $viewModel.user.birthDate, displayedComponents: .date)
+                DatePicker("Date of Birth", selection: $viewModel.user.birthDate, in: ...Date.thirteenYearsAgo, displayedComponents: .date)
                     .padding()
                 Button { //when button is tapped it will save user details in the Account model
                     viewModel.saveChanges()
@@ -62,5 +62,12 @@ struct RegisterView: View {
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView(viewModel: AccountViewModel(ordersViewModel: OrdersViewModel()))
+    }
+}
+
+// Adding minimum age of 13 year-old to register in the app 
+extension Date {
+    static var thirteenYearsAgo: Date {
+        return Calendar.current.date(byAdding: .year, value: -13, to: Date())!
     }
 }
