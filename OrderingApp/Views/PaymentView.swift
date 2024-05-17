@@ -18,6 +18,7 @@ struct PaymentView: View {
     @State private var cvv = "" // Track the entered CVV
     @State private var alert: AlertItem? // Alert to display payment success or failure
     @State private var isCashPayment: Bool = false // Track if cash payment is selected
+
     var totalPrice: Double // Total price passed from CartView
     
     var body: some View {
@@ -39,6 +40,9 @@ struct PaymentView: View {
                         // Textfield for entering expiry date
                         TextField("Expiry Date (MM/YY)", text: $expiryDate)
                             .keyboardType(.numberPad)
+                            .onChange(of: expiryDate) { date in
+                                expiryDate = expiryDateFormat(date)
+                            }
                         // Secure textfield for entering CVV
                         SecureField("CVV", text: $cvv)
                             .keyboardType(.numberPad)
@@ -73,9 +77,29 @@ struct PaymentView: View {
         ordersViewModel.addOrder(order)
         cart.placeOrder()
         alert = AlertContext.paymentSuccess // Set payment success alert
-        
         // Close the payment view
-        presentationMode.wrappedValue.dismiss()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    presentationMode.wrappedValue.dismiss()
+        } //dismiss the sheet automatically after 0.5s
+    }
+    
+    func expiryDateFormat(_ input: String) -> String {
+        let filter = input.filter {
+            "0123456789/".contains($0)
+        }
+        let userInput = filter.filter {
+            "0123456789".contains($0)
+        }
+            
+        if (userInput.count > 2) {
+            let index = userInput.index(userInput.startIndex, offsetBy: 2)
+            let month = userInput[..<index]
+            let year = userInput[index...]
+            return "\(month)/\(year)"
+        }
+        else {
+            return userInput
+        }
     }
 }
 
