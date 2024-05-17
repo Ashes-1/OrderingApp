@@ -12,6 +12,7 @@ struct CartView: View {
     @EnvironmentObject var ordersViewModel: OrdersViewModel
     @EnvironmentObject var accountViewModel: AccountViewModel
     @State private var alert: AlertItem?
+    @State private var showingPaymentView = false
 
     var body: some View {
         NavigationView {
@@ -25,11 +26,8 @@ struct CartView: View {
                     }
                     .listStyle(.plain)
 
-                    Button { // Adds order to order history
-                        let order = Order(items: cart.items, date: Date(), totalPrice: cart.totalPrice)
-                        ordersViewModel.addOrder(order)
-                        cart.placeOrder()
-                        alert = AlertContext.orderPlaced
+                    Button { // Trigger payment view only
+                        showingPaymentView = true 
                     } label: {
                         Text("$\(cart.totalPrice, specifier: "%.2f") - Place Order")
                             .font(.title3)
@@ -40,8 +38,11 @@ struct CartView: View {
                             .multilineTextAlignment(.center)
                             .cornerRadius(16)
                     }
-                    .alert(item: $alert) { alert in
-                        Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissBtn)
+                    .sheet(isPresented: $showingPaymentView) {
+                        PaymentView(totalPrice: cart.totalPrice)
+                            .environmentObject(cart)
+                            .environmentObject(ordersViewModel)
+                            .environmentObject(accountViewModel)
                     }
                     .padding(.bottom, 20)
                 }

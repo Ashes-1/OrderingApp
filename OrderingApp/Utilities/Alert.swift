@@ -41,4 +41,8 @@ struct AlertContext {
     static let orderPlaced = AlertItem(title: Text("Success!"),
                                    message: Text("Your order has successfully been placed."),
                                    dismissBtn: .default(Text("OK")))
+    
+    static let paymentSuccess = AlertItem(title: Text("Success!"),
+                                   message: Text("Your payment was successful and your order has been placed."),
+                                   dismissBtn: .default(Text("OK")))
 }
